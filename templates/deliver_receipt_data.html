@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deliver Receipt Data</title>
+</head>
+<body>
+    <h1>Deliver Receipt Data Page</h1>
+
+    <ul>
+        {% for receipt in deliver_receipts %}
+            <li>{{ receipt[0] }} - {{ receipt[1] }} - {{ receipt[3] }} - {{ receipt[5] }}</li>
+        {% endfor %}
+    </ul>
+    
+</body>
+</html>

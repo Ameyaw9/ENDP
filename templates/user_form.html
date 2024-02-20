@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Subscription</title>
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5; /* Light gray background */
+            margin: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 125vh; /* Full height of the viewport */
+        }
+
+        .subscription-box {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        input, select {
+            width: calc(100% - 20px); /* Adjusted input width */
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        /* Styles for the landing page link */
+        .landing-page {
+            background-color: #f5d76e; /* Light yellow background */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .landing-page h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .landing-page p {
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .landing-page a {
+            display: inline-block;
+            background-color: #3498db; /* Blue button */
+            color: #fff;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .landing-page a:hover {
+            background-color: #2980b9; /* Darker blue on hover */
+        }    
+        
+    </style>
+</head>
+<body class="subscription">
+    <div class="subscription-box">
+        <h1>User Subscription Page</h1>
+
+        <form action="/user" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br>
+
+            <label for="phone_number">Phone Number:</label>
+            <input type="text" id="phone_number" name="phone_number" required><br>
+
+            <label for="activation_status">Activation Status:</label>
+            <select id="activation_status" name="activation_status" required>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select><br>
+
+            <button type="submit">Subscribe</button>
+        </form>
+
+        <h2>Users List:</h2>
+        <ul>
+            {% for user in users %}
+                <li>{{ user[1] }} - {{ user[2] }} - {{ 'Yes' if user[3] == 1 else 'No' }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="landing-page">
+        <h1>Welcome to Our App!</h1>
+        <p>We are excited to have you on board. Download our app on the Google Play Store.</p>
+        <a href="https://get.lookout.com/web-code?code=r8zgdhx5" target="_blank">Download on Google Play</a>
+    </div>
+</body>
+</html>

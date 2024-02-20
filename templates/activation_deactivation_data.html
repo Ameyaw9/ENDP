@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activation & Deactivation Data</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
+</head>
+<body class="activation-deactivation">
+    <h1>Activation & Deactivation Data</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Next Bill Date</th>
+                <th>Billing ID</th>
+                <!-- Add more headers based on your table structure -->
+            </tr>
+        </thead>
+        <tbody>
+            {% for entry in activation_deactivation_data %}
+            <tr>
+                <td>{{ entry[0] }}</td>
+                <td>{{ entry[1] }}</td>
+                <!-- Add more columns based on your table structure -->
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
